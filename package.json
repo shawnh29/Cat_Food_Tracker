@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/shawnh29/Cat_Food_Tracker/issues"
   },
-  "homepage": "https://github.com/shawnh29/Cat_Food_Tracker#readme"
+  "homepage": "https://github.com/shawnh29/Cat_Food_Tracker#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0"
+  }
 }

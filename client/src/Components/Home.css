@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+  }
+  
+  .breakfast-box {
+    text-align: center;
+  }
+  .churu-box {
+    text-align: center;
+  }
+
+  #checkmark {
+    padding-left: 10px;
+  }
