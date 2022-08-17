@@ -8,16 +8,6 @@ function Home() {
     const [gaveBreakfast, setGaveBreakfast] = useState(false);
     const [gaveChuru, setGaveChuru] = useState(false);
 
-    // useEffect(() => {
-    //     fetch('/api').then(
-    //     response => response.json()
-    //     ).then(
-    //     data => {
-    //         setBackendData(data);
-    //     }
-    //     )
-    // }, []);
-
     function handleBreakfastClick() {
         setGaveBreakfast(!gaveBreakfast);
     }
@@ -26,24 +16,34 @@ function Home() {
         setGaveChuru(!gaveChuru);
     }
 
+    function handleResetClick() {
+      setGaveBreakfast(false);
+      setGaveChuru(false);
+    }
+
   return (
     <div>
-      <h1>Shade's Food Tracker</h1>
-      <div className='breakfast-box'>
-        <h2>
-          Breakfast
-          {(gaveBreakfast) ? (<FontAwesomeIcon icon={faSquareCheck} id='checkmark'/>) 
-            : (<FontAwesomeIcon icon={faSquareXmark} id='checkmark'/>)}
-        </h2>
-        <button onClick={handleBreakfastClick}>Gave</button>
-      </div>
-      <div className='churu-box'>
-        <h2>
-            Churu
-            {(gaveChuru) ? (<FontAwesomeIcon icon={faSquareCheck} id='checkmark'/>) 
-            : (<FontAwesomeIcon icon={faSquareXmark} id='checkmark'/>)}
-        </h2>
-        <button onClick={handleChuruClick}>Gave</button>
+      <div className='main-box'>
+        <h1>Shade's Food Tracker</h1>
+        <div className='breakfast-box'>
+          <h2>
+            Breakfast
+            {(gaveBreakfast) ? (<FontAwesomeIcon icon={faSquareCheck} id='checkmark'/>) 
+              : (<FontAwesomeIcon icon={faSquareXmark} id='checkmark'/>)}
+          </h2>
+          {(!gaveBreakfast) ? (<button onClick={handleBreakfastClick}>Gave</button>)
+          : (null)}
+        </div>
+        <div className='churu-box'>
+          <h2>
+              Churu
+              {(gaveChuru) ? (<FontAwesomeIcon icon={faSquareCheck} id='checkmark'/>) 
+              : (<FontAwesomeIcon icon={faSquareXmark} id='checkmark'/>)}
+          </h2>
+          {(!gaveChuru) ? (<button onClick={handleChuruClick} id='churu-gave-button'>Gave</button>)
+          : (null)}
+        </div>
+        <button onClick={handleResetClick} id='reset-button'>Reset</button>
       </div>
     </div>
   )
