@@ -10,7 +10,7 @@ function Home() {
 
     function handleBreakfastClick() {
         setGaveBreakfast(!gaveBreakfast);
-    }
+    } 
     
     function handleChuruClick() {
         setGaveChuru(!gaveChuru);
